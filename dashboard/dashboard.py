@@ -76,17 +76,7 @@ def create_prsa_gas_allyear_df(prsa_df):
     return prsa_gas_allyear_df
 
 
-# def create_prsa_debu_cluster_df(prsa_df):
-#     prsa_debu_cluster_df = prsa_df.groupby(["station"]).agg({
-#     "PM2.5": "mean",
-#     "PM10": "mean"
-#     }).reset_index()
 
-#     prsa_debu_cluster_df['PM2.5-category'] = pd.qcut(prsa_debu_cluster_df['PM2.5'], q=3, labels=['Rendah', 'Sedang', 'Tinggi'])
-#     prsa_debu_cluster_df['PM10-category'] = pd.qcut(prsa_debu_cluster_df['PM10'], q=3, labels=['Rendah', 'Sedang', 'Tinggi'])
-
-
-#     return prsa_debu_cluster_df
 
 def create_prsa_debu_cluster_df(prsa_df):
     prsa_debu_cluster_df = prsa_df.groupby(["station"]).agg({
@@ -134,7 +124,7 @@ def create_pm_geo_df(prsa_df):
 
 
 # Load cleaned data
-all_df = pd.read_csv("all_data_cleaned.csv")
+all_df = pd.read_csv("https://github.com/dicodingacademy/assets/all_data_cleaned.csv")
 
 all_df['date'] = pd.to_datetime(all_df[['year', 'month', 'day']])
 
