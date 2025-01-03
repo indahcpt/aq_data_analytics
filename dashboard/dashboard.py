@@ -124,7 +124,7 @@ def create_pm_geo_df(prsa_df):
 
 
 # Load cleaned data
-all_df = pd.read_csv("all_data_cleaned.csv")
+all_df = pd.read_csv("dashboard/all_data_cleaned.csv")
 
 all_df['date'] = pd.to_datetime(all_df[['year', 'month', 'day']])
 
